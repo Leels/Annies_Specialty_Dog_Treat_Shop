@@ -1,4 +1,13 @@
 <h1>Landing Page</h1>
 
+<p>Our 3 Most Recently Added Products</p>
+<% @most_recent_added.each do |product| %>
+   <p><%= link_to product.name, product_path(product) %> </p>
+<% end %>
+
+<p>Made in USA Products</p>
+<% @made_in_usa.each do |product| %>
+   <p><%= link_to product.name, product_path(product) %></p>
+<% end %>
 
 <button class="btn btn-primary"><%= link_to "See All Products", products_path %></button>

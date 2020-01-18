@@ -21,13 +21,12 @@ class Product < ApplicationRecord
     .order("products.name")
   )}
 
-  scope :find_usa_product, -> (country_parameter) {
-   where(:country_of_origin => country_parameter)
+  scope :find_usa_product, -> (country_of_origin_parameter) {
+   where(:country_of_origin => country_of_origin_parameter)
  }
 
   private
     def titleize_product
       self.name = self.name.titleize
-      self.country_of_origin = self.country_of_origin.titleize
     end
 end

@@ -12,12 +12,15 @@
 <body>
   <% content_for(:navbar) do %>
   <li><a href="/">Home</a></li>
-  <li><a href="projects">Project</a></li>
+  <li><a href="/products">Products</a></li>
   <% end %>
-
-  <%= flash[:alert] %>
-  <%= flash[:notice] %>
-
-  <%= yield %>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Annie's Specialty Dog Treat Shop</h1>
+    </div>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -9,7 +9,11 @@
 Product.destroy_all
 
 50.times do |index|
-  Product.create!(name: Faker::Food.dish, cost: Faker::Number.decimal(l_digits: 2), country_of_origin: Faker::Nation.nationality)
+  product = Product.create!(name: Faker::Food.dish, cost: Faker::Number.decimal(l_digits: 2), country_of_origin: Faker::Address.country, img: Faker::LoremFlickr.image(search_terms: ['dog treats', 'dog']))
+  rand(2..6).times do
+    product.reviews.new(author: Faker::GreekPhilosophers.name, rating: Faker::Number.between(from: 1, to: 5), content_body: Faker::Lorem.paragraph_by_chars(number: 200, supplemental: false), product_id: Faker::Number.between(from: 1, to: 50))
+    product.save
+  end
 end
 
-p "Created #{Product.count} products"
+p "Created #{Product.count} products and #{Review.count} reviews"

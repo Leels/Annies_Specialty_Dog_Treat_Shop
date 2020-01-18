@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Product successfully added!"
       redirect_to products_path
     else
+      flash[:alert] = "Product not added, see error notes below"
       render :new
     end
   end
@@ -33,8 +34,10 @@ class ProductsController < ApplicationController
   def update
     @product= Product.find(params[:id])
     if @product.update(product_params)
+      flash[:notice] = "Product successfully updated"
       redirect_to products_path
     else
+       flash[:alert] = "Product not updated, see error notes below"
       render :edit
     end
   end
@@ -42,6 +45,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+     flash[:notice] = "Product successfully removed"
     redirect_to products_path
   end
 

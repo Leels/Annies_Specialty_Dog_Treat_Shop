@@ -2,18 +2,18 @@
 <h2>Company info</h2>
 
 <% if @most_reviewed %>
-  <p>Most Reviewed Product</p>
+  <h3>Our Highest Reviewed Product</h3>
   <%= link_to @most_reviewed.name, product_path(@most_reviewed) %>
 <% end %>
 
-<p>3 Most Recently Added Products</p>
+<h3>Most Recently Added Products</h3>
 <% @most_recent_added.each do |product| %>
    <p><%= link_to product.name, product_path(product) %> </p>
 <% end %>
 
-<p>Made in USA Products</p>
+<h3>Treats Made in USA</h3>
 <% @made_in_usa.each do |product| %>
    <p><%= link_to product.name, product_path(product) %></p>
 <% end %>
 
-<button class="btn btn-primary"><%= link_to "See All Products", products_path %></button>
+<button class="btn btn-info"><%= link_to "See All Products", products_path %></button>

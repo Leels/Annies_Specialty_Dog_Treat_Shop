@@ -14,3 +14,31 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.jumbotron {
+  text-align: center;
+  margin: 20px;
+  background-color: #f2e6d9;
+  border: solid 3px #9eccfa;
+}
+
+body {
+  text-align: center;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc3ij6FMFQUFSfGSaidXvFAMfgSUIOSK8PDEzVYUuIYQ_p0Yw-&s");
+  font-family: 'Pacifico', cursive;
+  color: #4d004d;
+}
+
+.card {
+  background-color: #f2e6d9;
+  padding: 20px;
+  min-height: 400px;
+  border: solid 4px #9eccfa;
+  border-radius: 3px;
+  margin: 40px;
+}
+
+img {
+  border: solid 2px #9eccfa;
+  border-radius: 6px;
+}

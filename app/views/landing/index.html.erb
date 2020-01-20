@@ -1,6 +1,12 @@
 <h1>Landing Page</h1>
+<h2>Company info</h2>
 
-<p>Our 3 Most Recently Added Products</p>
+<% if @most_reviewed %>
+  <p>Most Reviewed Product</p>
+  <%= link_to @most_reviewed.name, product_path(@most_reviewed) %>
+<% end %>
+
+<p>3 Most Recently Added Products</p>
 <% @most_recent_added.each do |product| %>
    <p><%= link_to product.name, product_path(product) %> </p>
 <% end %>

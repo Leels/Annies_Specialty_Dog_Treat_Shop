@@ -4,7 +4,7 @@
 <h4>Country of Origin: <%= @product.country_of_origin %></h4>
 
 <% if @product.reviews.any? %>
-  <h4>Product Ratings:</h4>
+  <h4>Product <span class="glyphicon glyphicon-star"></span>Ratings:</h4>
 
   <% @product.reviews.each do |review| %>
         <h3><%= link_to review.rating, product_review_path(@product, review) %></h3>

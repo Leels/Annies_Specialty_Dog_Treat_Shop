@@ -1,24 +1,20 @@
-<h1>Landing Page</h1>
+<h2>Hi, I'm Annie</h2>
 
 <div id="annie">
-<%= image_tag "annie.png" %>
+  <%= image_tag "annie.png" %>
 </div>
 
-<h2>Company info</h2>
+<h3>Our story... I started this small specialty dog treat shop with my favorite human back in 2020 and it has quickly grown into the largest online retailer for artisinal organic dog treats. We source from specialty dog treat bakers from around the globe and each product is touroughly tested by yours truly for quality of ingredients and overall craftsmanship. </h3>
+<br>
+<h3>Our Highest Reviewed Treat</h3>
+<p><%= link_to @most_reviewed.name, product_path(@most_reviewed) %> </p>
 
-<% if @most_reviewed %>
-  <h3>Our Highest Reviewed Product</h3>
-  <%= link_to @most_reviewed.name, product_path(@most_reviewed) %>
-<% end %>
-
-<h3>Most Recently Added Products</h3>
+<h3>Recently Added Treats</h3>
 <% @most_recent_added.each do |product| %>
-   <p><%= link_to product.name, product_path(product) %> </p>
+<p><%= link_to product.name, product_path(product) %> </p>
 <% end %>
 
 <h3>Treats Made in USA</h3>
 <% @made_in_usa.each do |product| %>
-   <p><%= link_to product.name, product_path(product) %></p>
+<p><%= link_to product.name, product_path(product) %></p>
 <% end %>
-
-<button class="btn btn-info"><%= link_to "See All Products", products_path %></button>

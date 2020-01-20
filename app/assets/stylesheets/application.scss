@@ -31,7 +31,7 @@ body {
 
 .card {
   background-color: #f2e6d9;
-  padding: 20px;
+  padding-bottom: 20px;
   min-height: 400px;
   border: solid 4px	#63a6e9;
   border-radius: 3px;
@@ -41,4 +41,12 @@ body {
 img {
   border: solid 2px	#63a6e9;
   border-radius: 6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.navbar {
+  border-bottom: solid 2px	#63a6e9;
 }

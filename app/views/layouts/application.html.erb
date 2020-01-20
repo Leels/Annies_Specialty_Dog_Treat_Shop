@@ -11,10 +11,6 @@
 </head>
 
 <body>
-  <% content_for(:navbar) do %>
-  <li><a href="/">Home</a></li>
-  <li><a href="/products">Products</a></li>
-  <% end %>
   <div class="container">
     <div class="jumbotron">
       <h1>Annie's Specialty Dog Treat Shop</h1>
@@ -22,6 +18,10 @@
     <%= flash[:alert] %>
     <%= flash[:notice] %>
     <div class="card">
+    <nav class="navbar navbar-info bg-info">
+    <a class="navbar-brand" href="/"><strong>Home</strong></a>
+    <a class="navbar-brand" href="/products">Treats</a>
+</nav>
     <%= yield %>
   </div>
   </div>

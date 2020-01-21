@@ -4,12 +4,10 @@
   <title>NewSpecialtyStore</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <div class="container">
     <div class="jumbotron">
@@ -18,13 +16,15 @@
     <%= flash[:alert] %>
     <%= flash[:notice] %>
     <div class="card">
-    <nav class="navbar navbar-info bg-info">
-    <a class="navbar-brand" href="/">Home</a>
-    <a class="navbar-brand" href="/products">Complete List of Treats</a>
-    <a class="navbar-brand" href="/products/new">Create New Treat</a>
-</nav>
-    <%= yield %>
-  </div>
+      <nav class="navbar navbar-info bg-info">
+        <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
+        <a class="navbar-brand" href="/products">Complete List of Treats</a>
+        <a class="navbar-brand" href="/products/new">Create New Treat</a>
+      </nav>
+      <div class="fade-in">
+        <%= yield %>
+      </div>
+    </div>
   </div>
 </body>
 </html>

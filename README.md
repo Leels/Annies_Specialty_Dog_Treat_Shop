@@ -7,7 +7,7 @@
 ### Project Specs
 #### Landing Page
 * The landing page contains basic information about the company and allows users to easily navigate to other areas of the site.
-* This page also includes the three most recently added products and the product with the most reviews.
+* This page also includes the three most recently added products, products from the USA and the product with the most reviews.
 
 #### Products
 * The site includes a products section with a list of the products. Each product is clickable with a detail view.
@@ -49,6 +49,9 @@
 * Clone this repository:
 * from  _C:\Users\exampleUser\exampleCloneLocation\example-project-title>_
 1. $ bundle install
+2. $ rake db:seed (to seed data)
+3. $ rails s
+4. navigate to localhost:3000
 
 
 ### Technologies Used

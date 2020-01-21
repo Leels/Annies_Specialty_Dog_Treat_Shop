@@ -1,6 +1,6 @@
-<h2>Author: <%= @review.author %></h2>
+<h2>Reviewer: <%= @review.author %></h2>
 <img src="<%= @review.img %>" alt="">
-<h2>Product: <%= @product.name %></h2>
+<h2>Treat: <%= @product.name %></h2>
 <h1>Rating: <% @review.rating.to_i.times do  %>
  <span class="glyphicon glyphicon-star"></span>
 <% end %>
@@ -14,4 +14,5 @@
   :data => {:confirm => "Are you sure?",
   :method => "delete"} %></h4>
 
-  <h4><%= link_to "Return to Product", product_path(@product) %></h4>
+
+<h4><%= link_to "Return to Product Page", product_path(@product) %></h4>

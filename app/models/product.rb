@@ -9,11 +9,11 @@ class Product < ApplicationRecord
   scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
 
   scope :most_reviews, -> {(
-      select("products.id, products.name, products.cost, products.coountry_of_origin, products.img, count(reviews.id) as reviews_count")
+      select("products.id, products.name, count(reviews.id) as reviews_count")
       .joins(:reviews)
       .group("products.id")
       .order("reviews_count DESC")
-      .limit(10)
+      .limit(1)
       )}
 
   scope :find_usa_product, -> (country_of_origin_parameter) {

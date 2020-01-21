@@ -4,10 +4,12 @@
   <%= image_tag "annie.png" %>
 </div>
 
-<h3>Our story... I started this small specialty dog treat shop with my favorite human back in 2020 and it has quickly grown into the largest online retailer for organic artisinal dog treats. We source from specialty dog treat bakers from around the globe and each product is touroughly tested by yours truly for quality of ingredients and overall craftsmanship. </h3>
+<h3>I started this small specialty dog treat shop with my favorite human back in 2020 and it has quickly grown into the largest online retailer for organic artisinal dog treats. We source from specialty dog treat bakers from around the globe and each product is touroughly tested by yours truly for quality of ingredients and overall craftsmanship. </h3>
 <br>
-<h3>Our Highest Reviewed Treat</h3>
-<p><%= link_to @most_reviewed.name, product_path(@most_reviewed) %> </p>
+<h3><span class="glyphicon glyphicon-star"></span> Highest Reviewed Treat <span class="glyphicon glyphicon-star"></span></h3>
+<% @most_reviewed.each do |product| %>
+<p><%= link_to product.name, product_path(product) %> </p>
+<% end %>
 
 <h3>Recently Added Treats</h3>
 <% @most_recent_added.each do |product| %>

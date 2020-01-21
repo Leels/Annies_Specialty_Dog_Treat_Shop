@@ -4,9 +4,11 @@
 <h1>Rating: <% @review.rating.to_i.times do  %>
  <span class="glyphicon glyphicon-star"></span>
 <% end %>
+
 <% @review.blank_stars.times do %>
  <span class="glyphicon glyphicon-star-empty"></span>
 <% end %>
+
 <h3>"<%= @review.content_body %>"</h3>
 <br>
 <h4><%= link_to "Edit Review", edit_product_review_path(@product, @review) %></h4>

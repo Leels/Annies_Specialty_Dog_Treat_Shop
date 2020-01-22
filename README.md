@@ -49,9 +49,11 @@
 * Clone this repository:
 * from  _C:\Users\exampleUser\exampleCloneLocation\example-project-title>_
 1. $ bundle install
-2. $ rake db:seed (to seed data)
-3. $ rails s
-4. navigate to localhost:3000
+2. $ rake db:migrate
+3. $ rake db:test:prepare
+4. $ rake db:seed (to seed data)
+5. $ rails s
+6. navigate to localhost:3000
 
 
 ### Technologies Used

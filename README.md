@@ -1,8 +1,8 @@
-# products_reviews_database
+# Annie's Specialty Dog Treat Shop
 ## By: Lela Smith
 
 ### Description
-#### Database tracker for specialty food products store. The database uses a one to many relationship to track products (which have a product name, cost, and country of origin) and each product's reviews (which have an author, content_body and rating).
+#### Database tracker for specialty dog treats shop. The database uses a one to many relationship to track products (which have a product name, cost, and country of origin) and each product's reviews (which have an author, content_body and rating).
 
 ### Project Specs
 #### Landing Page
@@ -15,7 +15,7 @@
 * Users are able to click an individual product to see its detail page.
 * Users are able to add a review to a product.
 
-####Scopes
+#### Scopes
 * The site displays the following information on the site:
   1. The product with the most reviews.
   2. The three most recently added products.

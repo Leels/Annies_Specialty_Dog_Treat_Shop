@@ -21,6 +21,12 @@
   2. The three most recently added products.
   3. All products made in the USA for buyers that want to buy local products.
 
+#### Authentication
+* Site has an admin with special permissions:
+  1. Admin is able to log in and out of the application.
+  2. Admin can add update and delete products.
+  3. All products made in the USA for buyers that want to buy local products.
+
 
 ### Project Routes
 |HTTP verb|Route|CRUD Action|Description|
@@ -60,11 +66,12 @@
 * HTML
 * CSS
 * Bootstrap
-* Ruby
-* Rails
-* Bootstrap
+* Ruby 2.5.1
+* Rails 5.2.4.1
 * Sinatra
 * PostgreSQL
+* Simplecov
+* Capybara
 
 ### License
 #### This software is licensed under the MIT license.

@@ -13,14 +13,19 @@
     <div class="jumbotron">
       <h1>Annie's Specialty Dog Treat Shop</h1>
     </div>
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
     <div class="card">
       <nav class="navbar navbar-info bg-info">
         <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
         <a class="navbar-brand" href="/products">Complete List of Treats</a>
         <a class="navbar-brand" href="/products/new">Create New Treat</a>
+        <% if current_user %>
+        <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+        <% else %>
+        <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+        <% end %>
       </nav>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
       <div class="fade-in">
         <%= yield %>
       </div>

@@ -25,10 +25,13 @@
 * Site has an admin with special permissions:
   1. Admin is able to log in and out of the application.
   2. Admin can add update and delete products.
-  3. All products made in the USA for buyers that want to buy local products.
+  3. Admin can add reviews.
+  4. Other users do not have CRUD functionality.
+  5. User can create an account and add add review to a product.
 
 
-### Project Routes
+
+### Admin Routes
 |HTTP verb|Route|CRUD Action|Description|
 |---|---|---|---|
 |GET|/products|READ|Get list of products|

@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_180236) do
     t.string "email"
     t.string "password_hash"
     t.string "password_salt"
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "reviews", "products"

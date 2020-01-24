@@ -14,4 +14,18 @@ class ApplicationController < ActionController::Base
       redirect_to '/'
     end
   end
+
+  def creator_auth(creator_id)
+       if current_user.nil? || ((current_user.permissions != 'admin') && (current_user.id != creator_id))
+           flash[:alert] = 'You\'re doing great! Keep trying, buddy :)'
+           redirect_to '/'
+       end
+   end
+
+   def admin_auth
+        unless (current_user.permissions == 'admin')
+            flash[:alert] = 'Nope.'
+            redirect_to '/'
+        end
+    end
 end

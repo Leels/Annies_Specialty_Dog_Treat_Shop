@@ -6,6 +6,7 @@
 <% if @product.reviews.any? %>
   <h4>Treat Product Ratings:</h4>
 
+
   <% @product.reviews.each do |review| %>
         <h3><%= link_to review.rating, product_review_path(@product, review) %></h3>
   <% end %>
@@ -15,9 +16,10 @@
 
 <h4><%= link_to "Add a Review", new_product_review_path(@product) %></h4>
 
+<% if current_user.admin %>
 <h4><%= link_to "Edit", edit_product_path(@product) %></h4>
 <h4><%= link_to "Delete", product_path(@product),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></h4>
-
+<% end %>
 <h4><%= link_to "Return to Treats", products_path %></h4>

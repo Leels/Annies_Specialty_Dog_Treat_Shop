@@ -11,10 +11,11 @@
 
 <h3>"<%= @review.content_body %>"</h3>
 <br>
+<% if current_user.admin %>
 <h4><%= link_to "Edit Review", edit_product_review_path(@product, @review) %></h4>
 <h4><%= link_to "Delete Review", product_review_path(@product, @review),
   :data => {:confirm => "Are you sure?",
   :method => "delete"} %></h4>
-
+<% end %>
 
 <h4><%= link_to "Return to Product Page", product_path(@product) %></h4>

@@ -1,31 +1,44 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-  helper_method :current_user
+    protect_from_forgery with: :exception
+    helper_method :current_user
 
-  def current_user
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
+    def current_user
+        if session[:user_id]
+            @current_user ||= User.find(session[:user_id])
+        end
     end
-  end
 
-  def authorize
-    if !current_user
-      flash[:alert] = "You aren't authorized to visit that page"
-      redirect_to '/'
+    def authorize(auth_type, creator = nil)
+        (creator.nil?) ? send(auth_type) : send(auth_type, creator)
     end
-  end
 
-  def creator_auth(creator_id)
-       if current_user.nil? || ((current_user.permissions != 'admin') && (current_user.id != creator_id))
-           flash[:alert] = 'You\'re doing great! Keep trying, buddy :)'
-           redirect_to '/'
-       end
-   end
-
-   def admin_auth
-        unless (current_user.permissions == 'admin')
-            flash[:alert] = 'Nope.'
+    private
+    def user
+        unless is_user?
+            flash[:alert] = "You aren't authorized to visit that page."
             redirect_to '/'
         end
+    end
+    def creator(creator_obj)
+        unless is_user? && (is_creator?(creator_obj) || is_admin?)
+            flash[:alert] = "You aren't authorized to visit that page."
+            redirect_to '/'
+        end
+    end
+    def admin
+        unless is_user? && is_admin?
+            flash[:alert] = "You aren't authorized to visit that page."
+            redirect_to '/'
+        end
+    end
+
+    def is_user?
+        !current_user.nil?
+    end
+    def is_creator?(creator)
+        current_user.id == creator.id
+    end
+    def is_admin?
+        current_user.admin
     end
 end

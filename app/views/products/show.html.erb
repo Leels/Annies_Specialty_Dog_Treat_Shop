@@ -11,6 +11,9 @@
 <% review.rating.to_i.times do  %>
  <a href="<%= product_review_path(@product, review) %>"><span class="glyphicon glyphicon-star"></span>
 <% end %>
+<% review.blank_stars.times do %>
+ <span class="glyphicon glyphicon-star-empty"></span>
+<% end %>
 - <%= review.author %></a> <br>
 <% end %>
 

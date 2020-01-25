@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action only: [:new, :edit, :update, :destroy] do
+          authorize(:admin, User.find_by('username = ?', params[:username]))
+      end
 
   def index
     @products = Product.all

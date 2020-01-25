@@ -1,3 +1,6 @@
+<% if current_user.admin %>
+<h4><%= link_to "+ Create New Product", new_product_path %></h4>
+<% end %>
 <h1>Our Tasty Treats:</h1>
 <br>
 <% if @products.any? %>

@@ -17,7 +17,6 @@
       <nav class="navbar navbar-info bg-info">
         <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
         <a class="navbar-brand" href="/products">Complete List of Treats</a>
-  
         <% if current_user %>
         <%= current_user.username %> | <%= link_to "Sign out", '/signout' %>
         <% else %>

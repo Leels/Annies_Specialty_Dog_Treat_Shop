@@ -1,4 +1,5 @@
 <h1><%= @product.name %></h1>
+
 <img src="<%= @product.img %>" alt="">
 <h2>Price $<%= @product.cost %></h2>
 <h4>Country of Origin: <%= @product.country_of_origin %></h4>
@@ -6,10 +7,13 @@
 <% if @product.reviews.any? %>
 <h4>Treat Product Ratings:</h4>
 
-
 <% @product.reviews.each do |review| %>
-<h3><%= link_to review.rating, product_review_path(@product, review) %></h3>
+<% review.rating.to_i.times do  %>
+ <a href="<%= product_review_path(@product, review) %>"><span class="glyphicon glyphicon-star"></span>
 <% end %>
+- <%= review.author %></a> <br>
+<% end %>
+
 <% else %>
 <h5>No reviews are listed for this product.</h5>
 <% end %>

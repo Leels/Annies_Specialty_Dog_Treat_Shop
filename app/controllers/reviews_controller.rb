@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
-
+  before_action only: [:new, :edit, :update, :destroy] do
+          authorize(:admin, User.find_by('username = ?', params[:username]))
+      end
+      before_action only: [:show] do
+              authorize(:user)
+          end
   def new
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new

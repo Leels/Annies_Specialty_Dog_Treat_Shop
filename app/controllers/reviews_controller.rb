@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action only: [:edit, :update, :destroy] do
-          authorize(:admin, User.find_by('username = ?', params[:username]))
+          authorize(:admin)
       end
       before_action only: [:new, :show] do
               authorize(:user)

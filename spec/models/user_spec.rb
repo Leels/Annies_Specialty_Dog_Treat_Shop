@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe User, :model do
 
+
     context '(validations)' do
         it { should validate_presence_of :username }
         it { should validate_presence_of :email }

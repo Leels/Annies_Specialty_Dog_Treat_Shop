@@ -51,10 +51,22 @@ img {
   margin-right: auto;
   width: 50%;
 }
-
+ #story {
+   padding-left: 3rem;
+   padding-right: 3rem;
+ }
 .navbar {
   border-bottom: solid 2px	#63a6e9;
+  color: #4b84bd;
 }
+ a {
+   color: #4b84bd;
+ }
+
+ #signin {
+   float: right;
+   padding-right: 3rem;
+ }
 
 .fade-in {
   animation: fadeIn ease 3s;

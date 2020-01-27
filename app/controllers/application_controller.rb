@@ -20,12 +20,7 @@ class ApplicationController < ActionController::Base
       redirect_to '/'
     end
   end
-  def creator(creator_obj)
-    unless is_user? && (is_creator?(creator_obj) || is_admin?)
-      flash[:alert] = "You aren't authorized to visit that page."
-      redirect_to '/'
-    end
-  end
+
   def admin
     unless is_user? && is_admin?
       flash[:alert] = "You aren't authorized to visit that page."
@@ -36,9 +31,7 @@ class ApplicationController < ActionController::Base
   def is_user?
     !current_user.nil?
   end
-  def is_creator?(creator)
-    current_user.id == creator.id
-  end
+
   def is_admin?
     current_user.admin
   end

@@ -33,4 +33,14 @@ describe 'the session sign-in process', :logged_out do
         click_on 'Complete List of Treats'
         expect(page).to have_content 'You aren\'t authorized to visit that page. Please sign in or register an account with us.'
     end
+    it "identifies if user is not and admin and has restricted access" do
+      User.create!({username: 'CapyTest', email: 'capytest@test.com', password: 'password'})
+      visit '/'
+      click_on 'Sign in'
+      fill_in 'email', :with => 'capytest@test.com'
+      fill_in 'password', :with => 'password'
+      click_on 'Sign In'
+      visit '/products/new'
+      expect(page).to have_content 'You aren\'t authorized to visit that page.'
+  end
 end

@@ -2,7 +2,7 @@
 ## By: Lela Smith
 
 ### Description
-#### Database tracker for specialty dog treats shop. The database uses a one to many relationship to track products (which have a product name, cost, and country of origin) and each product's reviews (which have an author, content_body and rating).
+#### Database tracker for specialty dog treats shop. The database uses a one to many relationship to track products (which have a product name, cost, and country of origin) and each product's reviews (which have an author, content_body and rating). Site's admin has full crud capability. Admin login information: email: admin@admin.com password: admin.
 
 ### Project Specs
 #### Landing Page

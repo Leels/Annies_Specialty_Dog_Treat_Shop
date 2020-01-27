@@ -28,4 +28,9 @@ describe 'the session sign-in process', :logged_out do
         click_on 'Sign out'
         expect(page).to have_content 'You\'ve signed out.'
     end
+    it "identifies if user is not signed in/registered" do
+        visit '/'
+        click_on 'Complete List of Treats'
+        expect(page).to have_content 'You aren\'t authorized to visit that page. Please sign in or register an account with us.'
+    end
 end

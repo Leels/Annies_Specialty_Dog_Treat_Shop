@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     private
     def user
         unless is_user?
-            flash[:alert] = "You aren't authorized to visit that page. Please register an account with us."
+            flash[:alert] = "You aren't authorized to visit that page. Please sign in or register an account with us."
             redirect_to '/'
         end
     end
